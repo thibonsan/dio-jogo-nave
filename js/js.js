@@ -36,6 +36,8 @@ function start() {
 	    movefundo();
         movejogador();
         moveinimigo1();
+        moveinimigo2();
+        moveamigo();
 	}
 
     function movefundo() {	
@@ -78,5 +80,23 @@ function start() {
             $("#inimigo1").css("left", 694);
             $("#inimigo1").css("top", posicaoY);
         }
+    }
+
+    function moveinimigo2() {
+        posicaoX = parseInt($("#inimigo2").css("left"));        
+        $("#inimigo2").css("left", posicaoX - 3);
+                    
+        if (posicaoX <= 0) {
+            $("#inimigo2").css("left", 775);                    
+        }
+    }
+
+    function moveamigo() {	
+        posicaoX = parseInt($("#amigo").css("left"));
+        $("#amigo").css("left", posicaoX + 1);
+                    
+        if (posicaoX > 906) {
+            $("#amigo").css("left", 0);                    
+        }    
     }
 }
